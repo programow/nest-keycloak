@@ -1,8 +1,8 @@
 {
-  "name": "nestjs-keycloak-admin",
-  "version": "1.8.0",
+  "name": "@programow/nest-keycloak",
+  "version": "1.8.1",
   "description": "Keycloak Admin Provider for Nest.js",
-  "author": "Yagiz Nizipli <yagiz@nizipli.com>",
+  "author": "Yagiz Nizipli <yagiz@nizipli.com> Forked and modified by Programow",
   "license": "MIT",
   "readmeFilename": "README.md",
   "main": "dist/main/index.js",
@@ -34,9 +34,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/anonrig/nestjs-keycloak-admin"
+    "url": "https://github.com/programow/nest-keycloak"
   },
-  "bugs": "https://github.com/anonrig/nestjs-keycloak-admin",
+  "bugs": "https://github.com/programow/nest-keycloak",
   "peerDependencies": {
     "@nestjs/common": "^8.2.6",
     "@nestjs/core": "^8.2.6",
@@ -45,11 +45,8 @@
   },
   "dependencies": {
     "@keycloak/keycloak-admin-client": "^18.0.0",
-    "@nestjs/apollo": "^10.0.14",
     "@nestjs/graphql": "^10.0.14",
-    "apollo-server-express": "^3.8.1",
     "axios": "^0.27.2",
-    "graphql": "^16.5.0",
     "keycloak-connect": "^18.0.0",
     "openid-client": "^5.1.6",
     "ts-morph": "^15.0.0"
