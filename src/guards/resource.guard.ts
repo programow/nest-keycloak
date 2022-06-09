@@ -32,6 +32,7 @@ export class ResourceGuard implements CanActivate {
   constructor(
     @Inject(KeycloakService)
     private keycloak: KeycloakService,
+    @Inject(Reflector.name)
     private readonly reflector: Reflector
   ) {}
 
@@ -97,8 +98,8 @@ export class ResourceGuard implements CanActivate {
       const response = await this.keycloak.permissionManager.requestTicket({
         token: request.accessToken as string,
         audience: this.keycloak.options.clientId,
-        resourceId,
-        scope: scope ? `${resourceType}:${scope}` : undefined,
+        resourceId: resourceId || resourceType,
+        scope: scope ? `${scope}` : undefined,
         response_mode: resourceHandler
           ? TicketResponseMode.permissions
           : TicketResponseMode.decision,
@@ -110,6 +111,7 @@ export class ResourceGuard implements CanActivate {
       }
 
       const [{ scopes, rsid }] = response as TicketPermissionResponse[]
+
       request.scopes = scopes
       request.resource = await this.keycloak.resourceManager.findById(rsid)
       return true
