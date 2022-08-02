@@ -1,6 +1,6 @@
 {
   "name": "@programow/nest-keycloak",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "Keycloak Admin Provider for Nest.js",
   "author": "Yagiz Nizipli <yagiz@nizipli.com> Forked and modified by Programow",
   "license": "MIT",
@@ -47,6 +47,7 @@
     "@keycloak/keycloak-admin-client": "^18.0.0",
     "@nestjs/graphql": "^10.0.14",
     "axios": "^0.27.2",
+    "jwt-decode": "^3.1.2",
     "keycloak-connect": "^18.0.0",
     "openid-client": "^5.1.6",
     "ts-morph": "^15.0.0"
